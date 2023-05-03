@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import './assets/alignment';
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color:lightgrey;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+mat-card {
+  background-color: grey;
+}

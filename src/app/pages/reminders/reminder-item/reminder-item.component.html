@@ -1,0 +1,14 @@
+
+<mat-card class="tasks mb-1">
+  <mat-card-header class="mb-2">Tasks for today:</mat-card-header>
+  <mat-card-content class="mb-2">
+    <div *ngFor="let reminder of reminders | async"
+    class="sides-xy">
+      <div>{{reminder.text}}</div>
+      <div>
+        <mat-icon (click)="onClick()">check</mat-icon>
+        <mat-icon (click)="onDelete(reminder)">delete</mat-icon>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

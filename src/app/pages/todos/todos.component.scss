@@ -1,0 +1,19 @@
+
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.task-header {
+  background-color: grey;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0;
+}
+
+mat-icon {
+  font-weight: 700;
+}

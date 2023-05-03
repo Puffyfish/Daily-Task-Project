@@ -1,0 +1,66 @@
+{
+  "todos": [
+    {
+      "id": "1234",
+      "text": "Doctors Appointment",
+      "isCompleted": false
+    },
+    {
+      "id": "12ga",
+      "text": "Meeting at School",
+      "isCompleted": false
+    },
+    {
+      "id": "1gg4",
+      "text": "Food Shopping",
+      "isCompleted": false
+    },
+    {
+      "id": "0.41001623141406564",
+      "text": "new task test 2",
+      "isCompleted": false
+    },
+    {
+      "id": "0.05545336360267742",
+      "text": "test 3",
+      "isCompleted": false
+    },
+    {
+      "id": "0.51052502352241555",
+      "text": "test 4",
+      "isCompleted": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "jj@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "email": "lalala@gmail.com",
+      "password": "asdfgh"
+    }
+  ],
+  "reminders": [
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "time": "8:30 AM",
+      "isCompleted": false
+    },
+    {
+      "id": 2,
+      "text": "Meeting at School",
+      "time": "2:30 PM",
+      "isCompleted": false
+    },
+    {
+      "id": 3,
+      "text": "Food Shopping",
+      "time": "4:30 PM",
+      "isCompleted": false
+    }
+  ]
+}

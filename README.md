@@ -1,27 +1,56 @@
-# TodosProject
+# Daily Task Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+This repository contains code for the Daily Task Project, a simple to-do list application that allows users to create and manage tasks on a daily basis.
+It uses the ANGULAR framework and a fake json database (db.json) to get a fake REST API.
 
-## Development server
+https://puffyfish.github.io/Daily-Task-Project/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pages
 
-## Code scaffolding
+1. Tasks Page - for the unique task that needs to be done per day.
+2. Reminders Page - for the repeating daily task like take vitamins, drink water, exercise
+3. Login Page - to showcase how a basic authentication is done
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+To run this application, you will need to have Node.js installed on your system. Once you have Node.js installed, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory using the terminal.
+3. Run `npm install` to install all required dependencies.
+4. Run `npm start` to start the application.
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To use the Daily Task Project, follow these steps:
 
-## Running end-to-end tests
+1. Open your web browser and navigate to `http://localhost:4200`.
+2. Create a new task by entering a task name and click ENTER in your keyboard.
+3. Mark a task as completed by clicking the "check" icon next to the task name.
+4. Delete a task by clicking the "trash" icon next to the task name.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Code Structure
 
-## Further help
+The Daily Task Project code is organized into several files and directories:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `index.js`: The main entry point for the application.
+- `public/`: Contains static assets such as CSS and images.
+- `src/`: Contains the main source code for the application.
+  - `components/`: Contains Angular components used to build the UI.
+  - `App.js`: The main Angular component that renders the application.
+  - `index.js`: The main JavaScript file that initializes the Angular app.
+
+## Examples
+
+Here's a screenshot of the Daily Task Project in action:
+
+//////// to be added in the future ////////
+
+## Known Issues
+
+- The application does not currently support drag-and-drop functionality for reordering tasks.
+- The application does not persist tasks across browser sessions.
+
+## Contributing
+
+If you would like to contribute to the Daily Task Project, feel free to submit a pull request.

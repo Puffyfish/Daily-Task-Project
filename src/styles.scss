@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< Updated upstream
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import './assets/alignment';
+=======
+@use '@angular/material' as mat;
+@import './assets/index.scss';
+
+
+// Theme configuration
+
+// DARK THEME
+$my-theme: mat.define-light-theme((
+ color: (
+  primary:  mat.define-palette(mat.$pink-palette, 700),
+  accent: mat.define-palette(mat.$blue-grey-palette)
+ ),
+));
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+>>>>>>> Stashed changes
 
 html, body { height: 100%; }
 
@@ -15,5 +34,19 @@ body {
 }
 
 mat-card {
+<<<<<<< Updated upstream
   background-color: grey;
 }
+=======
+  background-color: white;
+  color: black;
+}
+
+// $primary: theming.define-palette
+// (palette.$pink-palette, 700 #C2185B,
+//  500 #E91E63, 900 #880E4F);
+// $accent:  theming.define-palette(palette.$blue-grey-palette, A200, A100, A400) << i did not find a200 in blue-grey palette;
+
+
+@include mat.all-component-colors($my-theme);
+>>>>>>> Stashed changes

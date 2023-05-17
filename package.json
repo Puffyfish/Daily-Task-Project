@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+<<<<<<< Updated upstream
     "test": "ng test"
+=======
+    "test": "ng test",
+    "server": "json-server --watch db.json --port 3000"
+>>>>>>> Stashed changes
   },
   "private": true,
   "dependencies": {
@@ -20,6 +25,10 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+<<<<<<< Updated upstream
+=======
+    "css-loader": "^6.7.3",
+>>>>>>> Stashed changes
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -29,6 +38,10 @@
     "@angular/cli": "~15.1.6",
     "@angular/compiler-cli": "^15.1.0",
     "@types/jasmine": "~4.3.0",
+<<<<<<< Updated upstream
+=======
+    "angular-cli-ghpages": "^1.0.5",
+>>>>>>> Stashed changes
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -37,4 +50,8 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

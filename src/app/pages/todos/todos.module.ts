@@ -9,6 +9,10 @@ import { TodosComponent } from './todos.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { NewComponent } from 'src/app/pages/todos/new/new.component';
 import { FilterComponent } from './filter/filter.component';
+<<<<<<< Updated upstream
+=======
+import { HeaderComponent } from 'src/app/shared/header/header.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: '', component: TodosComponent}
@@ -19,6 +23,10 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
+<<<<<<< Updated upstream
+=======
+    HeaderComponent,
+>>>>>>> Stashed changes
     MatCheckboxModule,
     RouterModule.forChild(routes)
   ],

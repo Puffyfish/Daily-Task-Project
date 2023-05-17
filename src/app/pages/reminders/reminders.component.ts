@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+<<<<<<< Updated upstream
 import { ActivatedRoute, Router } from '@angular/router';
+=======
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-reminders',
@@ -9,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RemindersComponent {
 
 
+<<<<<<< Updated upstream
   constructor(
     private router: Router,
     private route: ActivatedRoute
@@ -19,4 +23,7 @@ export class RemindersComponent {
     this.router.navigate(['new'], {relativeTo: this.route})
     // this.newTaskPage = true;
   }
+=======
+
+>>>>>>> Stashed changes
 }

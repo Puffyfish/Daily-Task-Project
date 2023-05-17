@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< Updated upstream
+=======
+import { RegisterComponent } from './pages/register/register.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: '', redirectTo: 'todos', pathMatch: 'full'},
@@ -11,7 +15,12 @@ const routes: Routes = [
       .then(m => m.RemindersModule)},
   {path: 'login', loadChildren:
       () => import('./pages/auth/auth.module')
+<<<<<<< Updated upstream
       .then(m => m.AuthModule)}
+=======
+      .then(m => m.AuthModule)},
+  {path: 'register', component: RegisterComponent}
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

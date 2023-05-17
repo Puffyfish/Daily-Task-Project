@@ -14,11 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 // import { MatTooltipModule } from '@angular/material/tooltip';
 // import { MatSelectModule } from '@angular/material/select';
 // import { MatDialogModule } from '@angular/material/dialog';
-<<<<<<< Updated upstream
-// import { MatSnackBarModule } from '@angular/material/snack-bar';
-=======
 import { MatSnackBarModule } from '@angular/material/snack-bar';
->>>>>>> Stashed changes
 // import {MatToolbarModule} from '@angular/material/toolbar';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {MatGridListModule} from '@angular/material/grid-list';
@@ -42,11 +38,7 @@ const material = [
     // MatDatepickerModule,
     // MatNativeDateModule,
     // MatMenuModule,
-<<<<<<< Updated upstream
-    // MatSnackBarModule,
-=======
     MatSnackBarModule,
->>>>>>> Stashed changes
     // MatTableModule,
     // MatDialogModule,
     MatCardModule

@@ -1,0 +1,20 @@
+
+.snackbar-success {
+  .mdc-snackbar__surface {
+    background: map_get($success, 500)!important;
+
+    .mdc-button__label, .mdc-snackbar__label {
+      color: map_get($light, 50)!important;
+    }
+  }
+}
+
+.snackbar-error {
+  .mdc-snackbar__surface {
+    background: map_get($danger, 500)!important;
+
+    .mdc-button__label, .mdc-snackbar__label {
+      color: map_get($light, 50)!important;
+    }
+  }
+}

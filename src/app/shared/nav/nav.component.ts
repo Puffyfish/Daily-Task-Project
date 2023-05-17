@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< Updated upstream
-=======
 import { AuthService } from 'src/app/services/auth.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-nav',
@@ -11,8 +8,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavComponent {
 
-<<<<<<< Updated upstream
-=======
   constructor(
     private authService: AuthService
   ) {}
@@ -20,5 +15,4 @@ export class NavComponent {
   onLogout() {
     this.authService.logout();
   }
->>>>>>> Stashed changes
 }

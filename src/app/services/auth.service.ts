@@ -1,14 +1,8 @@
 import { Injectable } from '@angular/core';
 import { UserInterface } from '../types/user.interface';
-<<<<<<< Updated upstream
-import { firstValueFrom } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-=======
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
->>>>>>> Stashed changes
 
 @Injectable ({
   providedIn: 'root'
@@ -18,27 +12,16 @@ export class AuthService {
   private localApi = 'http://localhost:3000/users/';
   // private _storage: any = null;
 
-<<<<<<< Updated upstream
-  constructor(private http:HttpClient) {
-    // this._storage = localStorage;
-  }
-
-  // login
-=======
   constructor(
     private http:HttpClient,
     private router: Router) {
     // this._storage = localStorage;
   }
 
->>>>>>> Stashed changes
   getUsers(): Observable<UserInterface[]> {
     return this.http.get<UserInterface[]>(this.localApi);
   }
 
-<<<<<<< Updated upstream
-  // logout
-=======
 
   //login(data:any): Observable<UserInterface>{
   //---- need to create a better login function and not from getUsers() option
@@ -67,7 +50,6 @@ export class AuthService {
     this.router.navigate(['/login']);
     localStorage.removeItem('userData')
   }
->>>>>>> Stashed changes
 
 
 }

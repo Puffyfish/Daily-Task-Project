@@ -1,8 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< Updated upstream
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-@import './assets/alignment';
-=======
 @use '@angular/material' as mat;
 @import './assets/index.scss';
 
@@ -19,7 +15,6 @@ $my-theme: mat.define-light-theme((
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
->>>>>>> Stashed changes
 
 html, body { height: 100%; }
 
@@ -34,10 +29,6 @@ body {
 }
 
 mat-card {
-<<<<<<< Updated upstream
-  background-color: grey;
-}
-=======
   background-color: white;
   color: black;
 }
@@ -49,4 +40,3 @@ mat-card {
 
 
 @include mat.all-component-colors($my-theme);
->>>>>>> Stashed changes

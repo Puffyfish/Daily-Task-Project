@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { User } from 'src/app/models/User.model';
 
 @Component({
   selector: 'app-register',
@@ -30,14 +31,36 @@ export class RegisterComponent {
     email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
     password: this.fb.control('', Validators.required)
   })
-  
+
 
   toRegister() {
     if(!this.registerForm.valid) {
       return
     }
 
-    this.authService.onRegister(this.registerForm.value).subscribe(
+    const {
+      username,
+      name,
+      email,
+      password
+    } = this.registerForm.value;
+
+    if (username && name && email && password) {
+
+      const newUser = {
+        username,
+        name,
+        email,
+        password
+      }
+
+    this.onCreate(newUser);
+    this.registerForm.reset();
+    }
+  }
+
+    onCreate(user: any) {
+    this.authService.onRegister(user).subscribe(
       newUser => {
         console.log('newUser: ', newUser);
         this._snackBar.open("Registration success", "Ok", {
@@ -51,6 +74,6 @@ export class RegisterComponent {
       }
     );
 
-    this.registerForm.reset();
+
   }
 }

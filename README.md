@@ -46,11 +46,7 @@ Here's a screenshot of the Daily Task Project in action:
 
 //////// to be added in the future ////////
 
-## Known Issues
+## Taks to do or in progress
 
-- The application does not currently support drag-and-drop functionality for reordering tasks.
-- The application does not persist tasks across browser sessions.
-
-## Contributing
-
-If you would like to contribute to the Daily Task Project, feel free to submit a pull request.
+- Update gh-pages to show the updated version of the app
+- Enable the use of json-server

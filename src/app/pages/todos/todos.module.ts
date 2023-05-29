@@ -10,6 +10,7 @@ import { TaskItemComponent } from './task-item/task-item.component';
 import { NewComponent } from 'src/app/pages/todos/new/new.component';
 import { FilterComponent } from './filter/filter.component';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
+import { DatePipe } from '@angular/common';
 
 const routes: Routes = [
   {path: '', component: TodosComponent}
@@ -20,8 +21,8 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    HeaderComponent,
     MatCheckboxModule,
+    HeaderComponent,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -30,7 +31,9 @@ const routes: Routes = [
     NewComponent,
     FilterComponent
   ],
+  providers: [DatePipe],
   exports: [
+    HeaderComponent,
     TodosComponent,
     TaskItemComponent,
     NewComponent,

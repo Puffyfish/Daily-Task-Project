@@ -1,6 +1,16 @@
+@import '../../../assets/colors';
+
 #header-container {
-  background-color: #C2185B;
-  z-index: -1;
-  height: 70px;
+  background-color: map_get($my-primary, 700);
   border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.header-greeting {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
 }

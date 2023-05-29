@@ -1,0 +1,6 @@
+@import '../../../../assets/colors';
+
+button.selected {
+	background-color: map_get($dark, 900);
+  color: white;
+}

@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 
 // Theme configuration
-$my-primary: mat.$purple-palette;
+$dark: mat.$deep-purple-palette;
 
 // // $custom-accent:  mat.define-palette($mat-blue, A200, A100, A400);
 $warn: mat.$amber-palette;
@@ -16,5 +16,5 @@ $custom-colors: (
   custom-color-b: mat.define-palette(mat.$red-palette, 400),
 );
 
-$dark: mat.define-palette(mat.$grey-palette, 800);
+$grey: mat.define-palette(mat.$grey-palette, 800);
 $light: mat.define-palette(mat.$grey-palette, 100);

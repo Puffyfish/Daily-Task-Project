@@ -3,7 +3,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
-import { User } from 'src/app/models/User.model';
 
 @Component({
   selector: 'app-register',

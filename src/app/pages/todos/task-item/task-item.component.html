@@ -1,12 +1,12 @@
-
+<!-- this file is the task-item.component.html -->
 <mat-card class="tasks mb-1">
   <mat-card-header class="mb-2">Tasks for today:</mat-card-header>
   <mat-card-content class="mb-2">
-    <div *ngFor="let task of tasks | async"
+    <div *ngFor="let task of tasks$ | async"
     class="sides-xy">
       <div>{{task.text}}</div>
       <div>
-        <mat-icon (click)="onClick()">check</mat-icon>
+        <mat-icon (click)="onClick(task)">check</mat-icon>
         <mat-icon (click)="onDelete(task)">delete</mat-icon>
       </div>
     </div>

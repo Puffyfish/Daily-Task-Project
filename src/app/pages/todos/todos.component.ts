@@ -9,12 +9,15 @@ import { TodosService } from 'src/app/services/todos.service';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  
   newTaskPage: boolean = false;
 
   constructor(
     private todosService: TodosService,
     private router: Router,
     private route: ActivatedRoute) {
+
+      
     }
 
   ngOnInit(): void {
@@ -22,11 +25,4 @@ export class TodosComponent implements OnInit {
   }
 
 
-  toMove(data: TodoInterface) {
-    // this.todosService.udpateProgress(data)
-    // .subscribe(
-    //   (task) => data = task
-    // )
-    // console.log(data);
-  }
 }

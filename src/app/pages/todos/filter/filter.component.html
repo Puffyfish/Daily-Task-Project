@@ -1,3 +1,20 @@
-  <button mat-button color="primary">All</button>
-  <button mat-button class="ml-1" color="primary">Active</button>
-  <button mat-button class="ml-1" color="primary">Completed</button>
+<div [ngClass]="{ hidden: noTodosClass$ | async }">
+  <div class="center-xy">
+
+      <button mat-raised-button color="accent"
+      [ngClass]="{ selected: (filter$ | async) === filterEnum.all }"
+      (click)="changeFilter($event, filterEnum.all)">
+      All</button>
+
+      <button mat-raised-button class="ml-1" color="accent"
+      [ngClass]="{ selected: (filter$ | async) === filterEnum.active }"
+      (click)="changeFilter($event, filterEnum.active)">
+      Active</button>
+
+      <button mat-raised-button class="ml-1" color="accent"
+      [ngClass]="{ selected: (filter$ | async) === filterEnum.completed}"
+      (click)="changeFilter($event, filterEnum.completed)">
+      Completed</button>
+      
+  </div>
+</div>

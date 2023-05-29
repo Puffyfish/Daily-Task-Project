@@ -1,32 +1,41 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { combineLatest, filter, map, Observable } from 'rxjs';
 import { TodoInterface } from 'src/app/types/todo.interface';
 import { TodosService } from 'src/app/services/todos.service';
+import { FilterEnum } from 'src/app/types/FilterEnum';
 
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.scss']
+  styleUrls: ['./task-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class TaskItemComponent {
-  tasks: Observable<TodoInterface[]>;
-  // @Input() inputTask!: Todos;
-  @Output() checkClicked = new EventEmitter();
+  tasks$: Observable<TodoInterface[]>;
 
   constructor(
     private todosService: TodosService
     ) {
-      this.tasks = this.todosService.getTodos()
-      // to get the default values so it wont be undefinid initially
-      // benefit: no subscription meaning no need to unsubscribe ==> LEANER CODE
-      // through this, we dont need ngOnInit and onDestory
+      this.tasks$ = combineLatest(
+        this.todosService.getTodos(),
+        this.todosService.filter$
+      ).pipe(map(([todos, filter]: [TodoInterface[], FilterEnum]) => {
+        if (filter === FilterEnum.active) {
+          return todos.filter( todo => !todo.isCompleted)
+        } else if (filter === FilterEnum.completed) {
+          return todos.filter( (todo) => todo.isCompleted)
+        }
+        console.log('combine', todos, filter);
+        return todos;
+      }));
     }
 
 
-  onClick() {
-    console.log('this check is clicked.');
-    this.checkClicked.emit();
+  onClick(todo: TodoInterface) {
+    todo.isCompleted = !todo.isCompleted;
+    this.todosService.archiveTodos(todo).subscribe();
+    console.log('this check is clicked;', todo.isCompleted);
   }
 
   onDelete(data: TodoInterface) {

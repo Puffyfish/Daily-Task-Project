@@ -15,6 +15,21 @@ button {
   padding: 0;
 }
 
+.tasks {
+  background-color: whitesmoke;
+  color: black;
+}
+
+mat-card-header {
+  background-color: map_get($dark, 900);
+  color: white;
+}
+
 mat-icon {
   font-weight: 700;
+}
+
+
+mat-card-actions {
+  justify-content: center;
 }

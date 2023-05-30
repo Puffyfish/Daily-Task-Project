@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { TodosService } from 'src/app/services/todos.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TodoInterface } from 'src/app/types/todo.interface';
 
 @Component({
@@ -9,13 +8,13 @@ import { TodoInterface } from 'src/app/types/todo.interface';
 })
 export class NewComponent {
   text: string = '';
+  @Output() onAddTask: EventEmitter<TodoInterface> = new EventEmitter<TodoInterface>();
 
-  constructor(
-    private todosService: TodosService
-  ) {}
+  constructor() {}
 
   changeText(event: Event): void {
-    const target = event.target as HTMLInputElement; // to specify the type of the target of the event
+    // to specify the type of the target of the event
+    const target = event.target as HTMLInputElement; 
     this.text = target.value;
   }
 
@@ -27,14 +26,7 @@ export class NewComponent {
       isCompleted: false
     }
 
-    this.todosService.addNewTodo(newTodo).subscribe({
-      next: (res) => {
-        console.log(res)
-      },
-      error: () => {
-        alert('New task not added. Something went wrong')
-      }
-    })
+    this.onAddTask.emit(newTodo);
 
     this.text = '';
   }

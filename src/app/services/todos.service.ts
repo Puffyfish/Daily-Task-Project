@@ -15,9 +15,7 @@ const httpOptions = {
 })
 
 export class TodosService {
- // todos = new BehaviorSubject<TodoInterface[]>([])
   // since BehaviorSubject is not an array, we can't directly push elements
-
   filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
 
   private localApi = 'http://localhost:3000/todos/';
@@ -25,8 +23,7 @@ export class TodosService {
   constructor(private http:HttpClient) {}
 
   addNewTodo(data: TodoInterface): Observable<TodoInterface> {
-    console.log(data);
-    return this.http.post<TodoInterface>(this.localApi, data, httpOptions);
+    return this.http.post<TodoInterface>(this.localApi, data, httpOptions)
   }
 
   getTodos(): Observable<TodoInterface[]> {
@@ -38,7 +35,6 @@ export class TodosService {
     const url = `${this.localApi}/${todos.id}`;
     return this.http.put<TodoInterface>(url, todos, httpOptions);
   }
-
 
   // to delete tasks
   deleteTodo(data: TodoInterface): Observable<TodoInterface>  {

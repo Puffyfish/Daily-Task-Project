@@ -1,15 +1,3 @@
-@import '../../../../assets/colors';
-
-.tasks {
-  background-color: whitesmoke;
-  color: black;
-}
-
-mat-card-header {
-  background-color: map_get($dark, 900);
-  color: white;
-}
-
 mat-icon {
   cursor: pointer;
 }
@@ -17,8 +5,4 @@ mat-icon {
 mat-icon:hover,
 mat-icon:active {
   color: rgb(158, 4, 89);
-}
-
-mat-card-actions {
-  justify-content: center;
 }

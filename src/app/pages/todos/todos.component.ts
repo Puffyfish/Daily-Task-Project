@@ -17,6 +17,7 @@ export class TodosComponent implements OnInit {
     private todosService: TodosService,) { }
 
   ngOnInit(): void {
+    // <<< TO BE IMPROVED: not updating automatically when a task is deleted >>>
     // gets the tasks with the filter function enabled
     this.subscription = this.todosService.getTodos().pipe(
         combineLatestWith(this.todosService.filter$),
@@ -39,6 +40,28 @@ export class TodosComponent implements OnInit {
     this.todosService.addNewTodo(todo).subscribe(
       (todo) => this.tasks.push(todo)
     )
+  }
+
+  onDelete(todo: TodoInterface) {
+    this.todosService.deleteTodo(todo).subscribe({
+      next: (res) => {
+        alert('Successfully deleted ' + todo.text);
+      },
+      error: (err) => {
+        alert(err);
+      }
+    });
+  }
+
+  onComplete(todo: TodoInterface) {
+    this.todosService.archiveTodos(todo).subscribe({
+      next: (res) => {
+        alert('You have completed this task:' + todo.text)
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
   ngOnDestroy(): void {

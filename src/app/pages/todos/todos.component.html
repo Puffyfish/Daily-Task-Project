@@ -14,7 +14,9 @@
       <mat-card-content class="mb-2">
           <app-task-item
           *ngFor="let task of tasks"
-          [todo]="task">
+          [todo]="task"
+          (toDelete)="onDelete(task)"
+          (toComplete)="onComplete(task)">
           </app-task-item>
         </mat-card-content>
       <mat-card-actions>

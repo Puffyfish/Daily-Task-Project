@@ -50,6 +50,19 @@
       "email": "testTwo@gmail.com",
       "password": "twotwo",
       "id": 4
+    },
+    {
+      "username": "nichol",
+      "name": "nichol",
+      "email": "nichol@gmail.com",
+      "password": "nichol",
+      "id": 5
+    },
+    {
+      "id": "chicken",
+      "name": "chicken",
+      "email": "chicken@gmail.com",
+      "password": "chicken"
     }
   ],
   "reminders": [

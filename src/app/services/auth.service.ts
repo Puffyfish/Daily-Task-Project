@@ -1,49 +1,46 @@
 import { Injectable } from '@angular/core';
 import { UserInterface } from '../types/user.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { User } from '../types/User.model';
 
 @Injectable ({
   providedIn: 'root'
 })
 
 export class AuthService {
+  user = new BehaviorSubject<User | null>(null)
   private localApi = 'http://localhost:3000/users/';
-  // private _storage: any = null;
 
   constructor(
     private http:HttpClient,
     private router: Router) {
-    // this._storage = localStorage;
   }
 
   getUsers(): Observable<UserInterface[]> {
     return this.http.get<UserInterface[]>(this.localApi);
   }
 
-
-  //login(data:any): Observable<UserInterface>{
-  //---- need to create a better login function and not from getUsers() option
-  // --- FIND USER USING USER'S ID ; CREATE a better ID system
-  // --- const user = new User(data)
-  // --- localStorage.setItem('userData', JSON.stringify(user))
-  // }
-
-  // findUser  <<-- this is better for logins
-  findByUsername(inputData: any): Observable<UserInterface> {
-    return this.http.get<UserInterface>(this.localApi + '/' + inputData).pipe(
-      tap(resData => 
-        console.log(resData)
-       
-    // return localStorage.setItem('userData', JSON.stringify(newUser))
-      )
-      )
+  // login -- since we are only using a json-server,
+  // then we will just login by finding the user and checking if the pw is correct
+  findByUsername(id: string) {
+    return this.http.get<UserInterface>(this.localApi + id)
   }
 
+  // find user using authSerice.findByUsername
+  // check if user is authenticated in the auth.component.ts
+  // if authenticated, proceed to store info
+  storeUser (user: UserInterface) {
+      const {id, name, email, password} = user
+      const currentUser = new User(id, name, email, password)
+      this.user.next(currentUser)
+      localStorage.setItem('userData', JSON.stringify(currentUser))
+    }
+
   // register
-  onRegister(data: any): Observable<UserInterface> {
-    const newUser = this.http.post<UserInterface>(this.localApi, data)
+  onRegister(data: UserInterface): Observable<UserInterface> {
+    return this.http.post<UserInterface>(this.localApi, data)
   }
 
   // update/edit

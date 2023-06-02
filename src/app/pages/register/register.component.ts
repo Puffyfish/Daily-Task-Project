@@ -25,7 +25,7 @@ export class RegisterComponent {
   ) {}
 
   registerForm= this.fb.group({
-    username: this.fb.control('', Validators.required),
+    id: this.fb.control('', Validators.required),
     name: this.fb.control('', Validators.required),
     email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
     password: this.fb.control('', Validators.required)
@@ -38,16 +38,16 @@ export class RegisterComponent {
     }
 
     const {
-      username,
+      id,
       name,
       email,
       password
     } = this.registerForm.value;
 
-    if (username && name && email && password) {
+    if (id && name && email && password) {
 
       const newUser = {
-        username,
+        id,
         name,
         email,
         password

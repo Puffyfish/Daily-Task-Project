@@ -82,11 +82,4 @@ export class AuthComponent implements OnInit{
     }
   }
 
-   // signUp() {this.http.post<any>('localApi', this.signupForm.value)
-        // .subscribe(( res) => {
-        //   alert('signup successful')
-        //   this.signupForm.reset();
-        // this._router.navigate(['login'])
-        // })}
-
 }

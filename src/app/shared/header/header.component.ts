@@ -12,23 +12,19 @@ import { DatePipe } from '@angular/common';
 })
 export class HeaderComponent {
   user!: string;
-  // datePipeString: string | null;
   todayNumber: number = Date.now();
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private datePipe: DatePipe
+    private route: ActivatedRoute
   ) {
-      // this.datePipeString = this.datePipe.transform(Date.now(),'yyyy-MM-dd');
-      // console.log(this.datePipeString);
 
-    // const loginUser = localStorage.getItem('userData');
+    const loginUser = localStorage.getItem('userData');
     // this.user = loginUser.name
+    console.log('this is the loginUser', loginUser)
   }
 
   showForm(){
     this.router.navigate(['new'], {relativeTo: this.route})
-    // this.newTaskPage = true;
   }
 }

@@ -59,19 +59,14 @@ export class RegisterComponent {
   }
 
     onCreate(user: any) {
-    this.authService.onRegister(user).subscribe(
-      newUser => {
-        console.log('newUser: ', newUser);
-        this._snackBar.open("Registration success", "Ok", {
+    this.authService.onRegister(user).subscribe({
+      next: (res) => this._snackBar.open("Registration success", "Ok", {
             duration: 3000,
             panelClass: ['snackbar-success']
-          });
-        this.router.navigate(['/login'])
-      },
-      err => {
-        this.errorMsg = err.message;
-      }
-    );
+          }),
+      error: (err) => this.errorMsg = err.message,
+      complete: () => this.router.navigate(['/login'])
+    })
 
 
   }

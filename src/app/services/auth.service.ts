@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserInterface } from '../types/user.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable ({
@@ -30,14 +30,20 @@ export class AuthService {
   // --- localStorage.setItem('userData', JSON.stringify(user))
   // }
 
-  // findUser
+  // findUser  <<-- this is better for logins
   findByUsername(inputData: any): Observable<UserInterface> {
-    return this.http.get<UserInterface>(this.localApi + '/' + inputData)
+    return this.http.get<UserInterface>(this.localApi + '/' + inputData).pipe(
+      tap(resData => 
+        console.log(resData)
+       
+    // return localStorage.setItem('userData', JSON.stringify(newUser))
+      )
+      )
   }
 
   // register
   onRegister(data: any): Observable<UserInterface> {
-    return this.http.post<UserInterface>(this.localApi, data)
+    const newUser = this.http.post<UserInterface>(this.localApi, data)
   }
 
   // update/edit
@@ -50,6 +56,4 @@ export class AuthService {
     this.router.navigate(['/login']);
     localStorage.removeItem('userData')
   }
-
-
 }

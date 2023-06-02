@@ -11,8 +11,18 @@
       "isCompleted": false
     },
     {
-      "id": "0.16325564101504466",
-      "text": "Test3",
+      "id": "0.67307702725754056",
+      "text": "This is a test",
+      "isCompleted": false
+    },
+    {
+      "id": "0.460661603557353164",
+      "text": "This is a second test",
+      "isCompleted": false
+    },
+    {
+      "id": "0.31221513450245012",
+      "text": "This is a third test",
       "isCompleted": false
     }
   ],
@@ -26,6 +36,20 @@
       "id": 2,
       "email": "lalala@gmail.com",
       "password": "asdfgh"
+    },
+    {
+      "username": "jean",
+      "name": "jean",
+      "email": "jean@gmail.com",
+      "password": "jeanjean",
+      "id": 3
+    },
+    {
+      "username": "testTwo",
+      "name": "testTwo",
+      "email": "testTwo@gmail.com",
+      "password": "twotwo",
+      "id": 4
     }
   ],
   "reminders": [

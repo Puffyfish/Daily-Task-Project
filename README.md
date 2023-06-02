@@ -3,7 +3,7 @@
 This repository contains code for the Daily Task Project, a simple to-do list application that allows users to create and manage tasks on a daily basis.
 It uses the ANGULAR framework and a fake json database (db.json) to get a fake REST API.
 
-https://puffyfish.github.io/Daily-Task-Project/
+This project is still IN PROGRESS.
 
 ## Pages
 
@@ -39,18 +39,3 @@ The Daily Task Project code is organized into several files and directories:
   - `components/`: Contains Angular components used to build the UI.
   - `App.js`: The main Angular component that renders the application.
   - `index.js`: The main JavaScript file that initializes the Angular app.
-
-## Examples
-
-Here's a screenshot of the Daily Task Project in action:
-
-//////// to be added in the future ////////
-
-## Known Issues
-
-- The application does not currently support drag-and-drop functionality for reordering tasks.
-- The application does not persist tasks across browser sessions.
-
-## Contributing
-
-If you would like to contribute to the Daily Task Project, feel free to submit a pull request.

@@ -7,7 +7,8 @@
 }
 
 .task-header {
-  background-color: map_get($accent, 500);
+  background-color: map_get($dark, 900);
+  color: white;
   margin-bottom: 2rem;
 }
 
@@ -21,7 +22,7 @@ button {
 }
 
 mat-card-header {
-  background-color: map_get($dark, 900);
+  background-color: map_get($my-primary, 700);
   color: white;
 }
 

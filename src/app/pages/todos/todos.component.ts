@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map, combineLatestWith, Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 import { TodosService } from 'src/app/services/todos.service';
 import { FilterEnum } from 'src/app/types/FilterEnum';
 import { TodoInterface } from 'src/app/types/todo.interface';
@@ -14,7 +15,8 @@ export class TodosComponent implements OnInit {
   subscription!: Subscription;
 
   constructor(
-    private todosService: TodosService,) { }
+    private todosService: TodosService,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     // <<< TO BE IMPROVED: not updating automatically when a task is deleted >>>

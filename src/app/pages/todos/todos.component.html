@@ -2,27 +2,27 @@
 <div class="todos-container px-1">
   <app-header></app-header>
   <app-todos-new (onAddTask)="addTask($event)"></app-todos-new>
-  <mat-card class="task-header p-1 mb-3">
+
+  <mat-card class="task-header p-1 mb-2">
     <mat-card-content>
-      2/10 Tasks Completed
+      <p>2/10 Tasks Completed</p>
     </mat-card-content>
   </mat-card>
-  <div>
-    <mat-card class="tasks mb-1">
-      <mat-card-header class="mb-2">Tasks for today:</mat-card-header>
-      <mat-card-content class="mb-2">
-          <app-task-item
-          *ngFor="let task of tasks"
-          [todo]="task"
-          (toDelete)="onDelete(task)"
-          (toComplete)="onComplete(task)">
-          </app-task-item>
-        </mat-card-content>
-      <mat-card-actions>
-        <app-filter></app-filter>
-      </mat-card-actions>
-    </mat-card>
 
-  </div>
-
+  <mat-card class="tasks mb-1">
+    <mat-card-header class="mb-1">
+      <h4>Tasks for today:</h4>
+    </mat-card-header>
+    <mat-card-content class="mb-2">
+      <app-task-item
+        *ngFor="let task of tasks"
+        [todo]="task"
+        (toDelete)="onDelete(task)"
+        (toComplete)="onComplete(task)">
+      </app-task-item>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-filter></app-filter>
+    </mat-card-actions>
+  </mat-card>
 </div>

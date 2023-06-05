@@ -1,11 +1,11 @@
 <!-- this is to list to-do tasks or archived tasks -->
-<div class="todos-container px-1">
+<div class="todos-container">
   <app-header></app-header>
   <app-todos-new (onAddTask)="addTask($event)"></app-todos-new>
 
-  <mat-card class="task-header p-1 mb-2">
+  <mat-card class="task-header p-1 mb-1">
     <mat-card-content>
-      <p>2/10 Tasks Completed</p>
+      <p>{{ completedTasks }}/{{ totalTasks }} Tasks Completed</p>
     </mat-card-content>
   </mat-card>
 

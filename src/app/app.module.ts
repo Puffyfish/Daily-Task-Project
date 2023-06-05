@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NavComponent } from './shared/nav/nav.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { RegisterComponent } from './pages/register/register.component';
 
@@ -18,7 +17,6 @@ import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     ButtonComponent,
     RegisterComponent
   ],

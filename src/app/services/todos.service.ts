@@ -16,7 +16,7 @@ const httpOptions = {
 
 export class TodosService {
   filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
-  private todosSubject: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
+  todosSubject: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
 
 
   private localApi = 'http://localhost:3000/todos/';

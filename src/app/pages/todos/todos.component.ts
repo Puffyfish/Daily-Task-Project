@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, combineLatestWith, Subscription } from 'rxjs';
+import { map, combineLatestWith, Subscription, Observable, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { TodosService } from 'src/app/services/todos.service';
 import { FilterEnum } from 'src/app/types/FilterEnum';
@@ -13,10 +13,26 @@ import { TodoInterface } from 'src/app/types/todo.interface';
 export class TodosComponent implements OnInit {
   tasks: TodoInterface[] = [];
   subscription!: Subscription;
+  completedTasks!: number;
+  totalTasks!: number;
 
   constructor(
-    private todosService: TodosService,
-    private authService: AuthService) { }
+    private todosService: TodosService
+    ) {
+      this.todosService.todosSubject.subscribe(
+        (todos) => {
+          this.totalTasks = todos.length
+      })
+
+      this.todosService.todosSubject.pipe(
+        map(
+          (todos) => {
+            return todos.filter((todo) => todo.isCompleted).length
+          }
+        )
+      )
+      .subscribe((todos) => this.completedTasks = todos)
+     }
 
   ngOnInit(): void {
     // <<< TO BE IMPROVED: not updating automatically when a task is deleted >>>

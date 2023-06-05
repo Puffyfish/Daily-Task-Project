@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { AuthService } from 'src/app/services/auth.service';
-import { UserInterface } from 'src/app/types/user.interface';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
-  imports: [MatButtonModule, DatePipe],
+  imports: [MatButtonModule, DatePipe, MatIconModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  user!: string;
   todayNumber: number = Date.now();
   loginUser!: {};
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
     private authService: AuthService
   ) {
 
@@ -30,4 +26,7 @@ export class HeaderComponent {
   // showForm(){
   //   this.router.navigate(['new'], {relativeTo: this.route})
   // }
+
+  onLogout() {
+    this.authService.logout()  }
 }

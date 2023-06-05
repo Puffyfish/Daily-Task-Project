@@ -3,9 +3,10 @@
   <app-header></app-header>
   <app-todos-new (onAddTask)="addTask($event)"></app-todos-new>
 
-  <mat-card class="task-header p-1 mb-1">
+  <mat-card class="task-header mb-1">
     <mat-card-content>
-      <p>{{ completedTasks }}/{{ totalTasks }} Tasks Completed</p>
+      <p>{{ todayNumber | date}}</p>
+      <h4>{{ completedTasks }}/{{ totalTasks }} Tasks Completed</h4>
     </mat-card-content>
   </mat-card>
 

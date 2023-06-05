@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { map, combineLatestWith, Subscription, Observable, tap } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { map, combineLatestWith, Subscription } from 'rxjs';
 import { TodosService } from 'src/app/services/todos.service';
 import { FilterEnum } from 'src/app/types/FilterEnum';
 import { TodoInterface } from 'src/app/types/todo.interface';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-todos',
@@ -11,6 +11,7 @@ import { TodoInterface } from 'src/app/types/todo.interface';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  todayNumber: number = Date.now();
   tasks: TodoInterface[] = [];
   subscription!: Subscription;
   completedTasks!: number;

@@ -15,10 +15,6 @@
   margin-bottom: 2rem;
 }
 
-button {
-  padding: 0;
-}
-
 .tasks {
   background-color: whitesmoke;
   color: black;
@@ -29,10 +25,13 @@ mat-card-header {
   color: white;
 }
 
+p {
+  font-size: 0.9rem;
+}
+
 mat-icon {
   font-weight: 700;
 }
-
 
 mat-card-actions {
   justify-content: center;

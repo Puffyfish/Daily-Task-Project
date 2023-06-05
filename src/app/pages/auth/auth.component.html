@@ -9,8 +9,8 @@
 
       <div class="d-flex flex-column">
         <mat-form-field appearance="fill" class="mb-3">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="">
@@ -21,10 +21,9 @@
 
       <div class="text-error text-center">
         <div
-          *ngIf="emailField && (emailField.dirty || emailField.touched) && emailField.errors"
+          *ngIf="usernameField && (usernameField.dirty || usernameField.touched) && usernameField.errors"
           class="errors">
-          <span *ngIf="emailField.errors['required']">Email is required</span>
-          <span *ngIf="emailField.errors['email']">Email must be valid</span>
+          <span *ngIf="usernameField.errors['required']">Username is required</span>
         </div>
 
         <div

@@ -1,34 +1,32 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { AuthService } from 'src/app/services/auth.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   standalone: true,
-  imports: [MatButtonModule, DatePipe],
+  imports: [MatButtonModule, DatePipe, MatIconModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  user!: string;
-  // datePipeString: string | null;
   todayNumber: number = Date.now();
+  loginUser!: {};
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private datePipe: DatePipe
+    private authService: AuthService
   ) {
-      // this.datePipeString = this.datePipe.transform(Date.now(),'yyyy-MM-dd');
-      // console.log(this.datePipeString);
 
-    // const loginUser = localStorage.getItem('userData');
-    // this.user = loginUser.name
+    const currentUser = JSON.parse(localStorage.getItem('userData') || '{}')
+    this.loginUser = currentUser.name
   }
 
-  showForm(){
-    this.router.navigate(['new'], {relativeTo: this.route})
-    // this.newTaskPage = true;
-  }
+  // showForm(){
+  //   this.router.navigate(['new'], {relativeTo: this.route})
+  // }
+
+  onLogout() {
+    this.authService.logout()  }
 }

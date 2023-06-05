@@ -8,11 +8,21 @@
     {
       "id": "1gg4",
       "text": "Food Shopping",
+      "isCompleted": true
+    },
+    {
+      "id": "0.67307702725754056",
+      "text": "This is a test",
       "isCompleted": false
     },
     {
-      "id": "0.16325564101504466",
-      "text": "Test3",
+      "id": "0.460661603557353164",
+      "text": "This is a second test",
+      "isCompleted": false
+    },
+    {
+      "id": "0.411534622411344464",
+      "text": "this is the third test",
       "isCompleted": false
     }
   ],
@@ -26,6 +36,33 @@
       "id": 2,
       "email": "lalala@gmail.com",
       "password": "asdfgh"
+    },
+    {
+      "username": "jean",
+      "name": "jean",
+      "email": "jean@gmail.com",
+      "password": "jeanjean",
+      "id": 3
+    },
+    {
+      "username": "testTwo",
+      "name": "testTwo",
+      "email": "testTwo@gmail.com",
+      "password": "twotwo",
+      "id": 4
+    },
+    {
+      "username": "nichol",
+      "name": "nichol",
+      "email": "nichol@gmail.com",
+      "password": "nichol",
+      "id": 5
+    },
+    {
+      "id": "chicken",
+      "name": "chicken",
+      "email": "chicken@gmail.com",
+      "password": "chicken"
     }
   ],
   "reminders": [

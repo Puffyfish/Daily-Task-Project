@@ -2,6 +2,13 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import {
+  MatSnackBar,
+  // MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition
+} from '@angular/material/snack-bar';
+import { User } from 'src/app/types/User.model';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -9,13 +16,17 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./auth.component.scss']
 })
 
-export class AuthComponent implements OnInit{
+export class AuthComponent implements OnInit {
   public loginForm!: FormGroup; //verified
   errorMsg: string = "";
   isSubmit: boolean = false;
+  user!: User;
 
-  get emailField() {
-    return this.loginForm.get('email');
+  // horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+  get usernameField() {
+    return this.loginForm.get('username');
   }
 
   get passwordField() {
@@ -25,19 +36,20 @@ export class AuthComponent implements OnInit{
   constructor(
     private _fb: FormBuilder,
     private _authService: AuthService,
-    private _router: Router
+    private _router: Router,
+    private _snackbar: MatSnackBar
   ) { }
 
   ngOnInit() {
     this.loginForm = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
       password: ['', Validators.required]
 
     });
 
   }
 
-  onSubmit(){
+  onSubmit() {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.invalid) {
       return;
@@ -45,48 +57,19 @@ export class AuthComponent implements OnInit{
 
     this.errorMsg = "";
     this.isSubmit = true;
-    const data = this.loginForm.value;
-
-    if (data) {
-      try {
-        // get all the users first
-        this._authService.getUsers()
-          .subscribe(res => {
-
-        // find the matching user
-            const user = res.find((a:any) => {
-              return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-            })
-
-        // if the user is found
-            if (user) {
-              alert('login success');
-              this.loginForm.reset();
-              this._router.navigate(['todos'])
-            } else {
-
-        // if the user was not found
-              alert('user not found')
-            }
-          })
-
-        // this._snackBar.open("Login success", "Ok", {
-        //   duration: 3000,
-        //   panelClass: ['snackbar-success']
-        // });
-
-      } catch (err: any) {
-        this.isSubmit = false;
-        this.errorMsg = err?.status == 401 ? 'Invalid login' : err.message;
+    const { username } = this.loginForm.value;
+    this._authService.findByUsername(username).subscribe(
+      (user) => {
+        this.user = user
+        const { password } = this.loginForm.value;
+         if (this.user.password !== password) {
+          return alert('Incorrect logins') 
+        }
+        this._authService.storeUser(this.user)
+        this.loginForm.reset();
+        this._router.navigate(['todos'])
       }
-    }
+    )
   }
-
-   // signUp() {this.http.post<any>('localApi', this.signupForm.value)
-        // .subscribe(( res) => {
-        //   alert('signup successful')
-        //   this.signupForm.reset();
-        // this._router.navigate(['login'])
-        // })}
 
 }

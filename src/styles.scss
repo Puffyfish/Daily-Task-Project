@@ -9,7 +9,7 @@
 $my-theme: mat.define-light-theme((
  color: (
   primary:  mat.define-palette(mat.$pink-palette, 700),
-  accent: mat.define-palette(mat.$cyan-palette, A700)
+  accent: mat.define-palette(mat.$deep-purple-palette, 900)
  ),
 ));
 
@@ -17,6 +17,13 @@ $my-theme: mat.define-light-theme((
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html, body { height: 100%; }
 

@@ -25,7 +25,7 @@ export class RegisterComponent {
   ) {}
 
   registerForm= this.fb.group({
-    username: this.fb.control('', Validators.required),
+    id: this.fb.control('', Validators.required),
     name: this.fb.control('', Validators.required),
     email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
     password: this.fb.control('', Validators.required)
@@ -38,16 +38,16 @@ export class RegisterComponent {
     }
 
     const {
-      username,
+      id,
       name,
       email,
       password
     } = this.registerForm.value;
 
-    if (username && name && email && password) {
+    if (id && name && email && password) {
 
       const newUser = {
-        username,
+        id,
         name,
         email,
         password
@@ -59,19 +59,14 @@ export class RegisterComponent {
   }
 
     onCreate(user: any) {
-    this.authService.onRegister(user).subscribe(
-      newUser => {
-        console.log('newUser: ', newUser);
-        this._snackBar.open("Registration success", "Ok", {
+    this.authService.onRegister(user).subscribe({
+      next: (res) => this._snackBar.open("Registration success", "Ok", {
             duration: 3000,
             panelClass: ['snackbar-success']
-          });
-        this.router.navigate(['/login'])
-      },
-      err => {
-        this.errorMsg = err.message;
-      }
-    );
+          }),
+      error: (err) => this.errorMsg = err.message,
+      complete: () => this.router.navigate(['/login'])
+    })
 
 
   }

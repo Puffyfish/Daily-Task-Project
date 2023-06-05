@@ -12,29 +12,21 @@ import { TodosService } from 'src/app/services/todos.service';
 
 export class TaskItemComponent {
   @Input('todo') todoProps!: TodoInterface;
+  @Output() toDelete = new EventEmitter<TodoInterface>();
+  @Output() toComplete = new EventEmitter<TodoInterface>();
 
   constructor(
     private todosService: TodosService
-    ) {
-
-    }
+    ) {}
 
 
   onClick(todo: TodoInterface) {
     todo.isCompleted = !todo.isCompleted;
-    this.todosService.archiveTodos(todo).subscribe();
-    console.log('this check is clicked;', todo.isCompleted);
+    this.toComplete.emit(todo);
   }
 
-  onDelete(data: TodoInterface) {
-    console.log('deleteReminder:', data)
-    this.todosService.deleteTodo(data).subscribe({
-      next: (res) => {
-        alert('Successfully deleted ' + data.text)
-      },
-      error: (err) => {
-        alert(err);
-      }
-    })
+  onDelete(todo: TodoInterface) {
+    console.log('delete button clicked:', todo)
+    this.toDelete.emit(todo);
   }
 }

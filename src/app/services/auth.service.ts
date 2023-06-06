@@ -11,7 +11,7 @@ import { User } from '../types/User.model';
 
 export class AuthService {
   user = new BehaviorSubject<User | null>(null)
-  // private localApi = 'http://localhost:3000/users/';
+  // private api = 'http://localhost:3000/users/';
   private api = 'https://my-json-server.typicode.com/Puffyfish/Daily-Task-Project/users/';
 
   constructor(

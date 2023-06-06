@@ -23,18 +23,22 @@
   ],
   "users": [
     {
-      "username": "jean",
+      "id": "jean",
       "name": "jean",
       "email": "jean@gmail.com",
-      "password": "jeanjean",
-      "id": 3
+      "password": "jeanjean"
     },
     {
-      "username": "chicken",
+      "id": "chicken",
       "name": "chicken",
       "email": "chicken@gmail.com",
-      "password": "chicken",
-      "id": 5
+      "password": "chicken"
+    },
+    {
+      "id": "ramon",
+      "name": "ramon",
+      "email": "ramonJR@gmail.com",
+      "password": "ramon123"
     }
   ]
 }

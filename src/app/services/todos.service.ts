@@ -18,7 +18,7 @@ export class TodosService {
   filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
   todosSubject: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
 
-  // private localApi = 'http://localhost:3000/todos/';
+  // private api = 'http://localhost:3000/todos/';
   private api = 'https://my-json-server.typicode.com/Puffyfish/Daily-Task-Project/todos/';
 
   constructor(private http:HttpClient) {}

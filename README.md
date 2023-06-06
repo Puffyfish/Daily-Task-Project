@@ -4,8 +4,11 @@ This repository contains code for the Daily Task Project, a simple to-do list ap
 It uses the ANGULAR framework and a fake json database (db.json) to get a fake REST API.
 
 https://puffyfish.github.io/Daily-Task-Project/
+
 username and password: chicken
-![image](https://github.com/Puffyfish/Daily-Task-Project/assets/93864592/b8892749-72ba-447d-8c61-8d34eb1f717c)
+
+![dashboard-removebg-preview](https://github.com/Puffyfish/Daily-Task-Project/assets/93864592/4f349ee0-4bd2-4cd1-bb05-25034954e115)
+
 
 ## Pages
 
@@ -33,3 +36,9 @@ To use the Daily Task Project, follow these steps:
 2. Create a new task by entering a task name and click ENTER in your keyboard.
 3. Mark a task as completed by clicking the "check" icon next to the task name.
 4. Delete a task by clicking the "trash" icon next to the task name.
+
+## Issues to be Fixed
+1. Tasks do not get automatically gets deleted. The page needs to be refreshed. 
+  - I need to refactor my code so that the streams of data would work properly.
+2. Add a route guard.
+  - I wanted to deploy the app asap so I just did not bother with adding the route guard.

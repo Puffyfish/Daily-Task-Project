@@ -5,11 +5,13 @@ It uses the ANGULAR framework and a fake json database (db.json) to get a fake R
 
 This project is still IN PROGRESS.
 
+![image](https://github.com/Puffyfish/Daily-Task-Project/assets/93864592/b8892749-72ba-447d-8c61-8d34eb1f717c)
+
 ## Pages
 
-1. Tasks Page - for the unique task that needs to be done per day.
-2. Reminders Page - for the repeating daily task like take vitamins, drink water, exercise
-3. Login Page - to showcase how a basic authentication is done
+1. Tasks Page - for the unique task that needs to be done per day. It has complete (to mark task as complete), delete, filter (filter completed and not completed tasks) functionalities.
+2. Login Page - to showcase how a basic authentication is done
+3. Register Page - to add new user
 
 ## Installation
 
@@ -18,7 +20,10 @@ To run this application, you will need to have Node.js installed on your system.
 1. Clone the repository to your local machine.
 2. Navigate to the project directory using the terminal.
 3. Run `npm install` to install all required dependencies.
-4. Run `npm start` to start the application.
+4. In auth.service and todos.service, comment out 'private api='https://my-json-server.typicode....' because this just points to my repository.
+5. Uncomment 'private api='http://localhost:3000/...' so that you can use json server in your local machine
+6. Open your terminal. CD to your project. Run 'npm run server' to run json server.
+7. Open a different terminal. CD to your project again. Run `ng serve` to start the application.
 
 ## Usage
 
@@ -28,14 +33,3 @@ To use the Daily Task Project, follow these steps:
 2. Create a new task by entering a task name and click ENTER in your keyboard.
 3. Mark a task as completed by clicking the "check" icon next to the task name.
 4. Delete a task by clicking the "trash" icon next to the task name.
-
-## Code Structure
-
-The Daily Task Project code is organized into several files and directories:
-
-- `index.js`: The main entry point for the application.
-- `public/`: Contains static assets such as CSS and images.
-- `src/`: Contains the main source code for the application.
-  - `components/`: Contains Angular components used to build the UI.
-  - `App.js`: The main Angular component that renders the application.
-  - `index.js`: The main JavaScript file that initializes the Angular app.

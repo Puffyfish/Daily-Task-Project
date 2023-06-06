@@ -3,8 +3,8 @@
 This repository contains code for the Daily Task Project, a simple to-do list application that allows users to create and manage tasks on a daily basis.
 It uses the ANGULAR framework and a fake json database (db.json) to get a fake REST API.
 
-This project is still IN PROGRESS.
-
+https://puffyfish.github.io/Daily-Task-Project/
+username and password: chicken
 ![image](https://github.com/Puffyfish/Daily-Task-Project/assets/93864592/b8892749-72ba-447d-8c61-8d34eb1f717c)
 
 ## Pages

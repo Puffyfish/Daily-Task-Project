@@ -18,18 +18,18 @@ export class TodosService {
   filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
   todosSubject: BehaviorSubject<TodoInterface[]> = new BehaviorSubject<TodoInterface[]>([]);
 
-
-  private localApi = 'http://localhost:3000/todos/';
+  // private localApi = 'http://localhost:3000/todos/';
+  private api = 'https://my-json-server.typicode.com/Puffyfish/Daily-Task-Project/todos/';
 
   constructor(private http:HttpClient) {}
 
   addNewTodo(data: TodoInterface): Observable<TodoInterface> {
-    return this.http.post<TodoInterface>(this.localApi, data, httpOptions)
+    return this.http.post<TodoInterface>(this.api, data, httpOptions)
   }
 
   // <<< TO BE IMPROVED: not updating automatically when a task is deleted >>>
   getTodos(): Observable<TodoInterface[]> {
-    return this.http.get<TodoInterface[]>(this.localApi).pipe(
+    return this.http.get<TodoInterface[]>(this.api).pipe(
       tap((todos) => {
         this.todosSubject.next(todos)
       })
@@ -38,13 +38,13 @@ export class TodosService {
 
   // to archive tasks
   archiveTodos(todos: TodoInterface): Observable<TodoInterface> {
-    const url = `${this.localApi}${todos.id}`;
+    const url = `${this.api}${todos.id}`;
     return this.http.put<TodoInterface>(url, todos, httpOptions);
   }
 
   // <<< TO BE IMPROVED: not updating automatically when a task is deleted >>>
   deleteTodo(todo: TodoInterface): Observable<TodoInterface>  {
-    const url = `${this.localApi}${todo.id}`;
+    const url = `${this.api}${todo.id}`;
     return this.http.delete<TodoInterface>(url).pipe(
       tap(() => {
         this.getTodos().subscribe(); // Trigger a new request to fetch the updated todos

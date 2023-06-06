@@ -11,7 +11,8 @@ import { User } from '../types/User.model';
 
 export class AuthService {
   user = new BehaviorSubject<User | null>(null)
-  private localApi = 'http://localhost:3000/users/';
+  // private localApi = 'http://localhost:3000/users/';
+  private api = 'https://my-json-server.typicode.com/Puffyfish/Daily-Task-Project/users/';
 
   constructor(
     private http:HttpClient,
@@ -19,13 +20,13 @@ export class AuthService {
   }
 
   getUsers(): Observable<UserInterface[]> {
-    return this.http.get<UserInterface[]>(this.localApi);
+    return this.http.get<UserInterface[]>(this.api);
   }
 
   // login -- since we are only using a json-server,
   // then we will just login by finding the user and checking if the pw is correct
   findByUsername(id: string) {
-    return this.http.get<UserInterface>(this.localApi + id)
+    return this.http.get<UserInterface>(this.api + id)
   }
 
   // find user using authSerice.findByUsername
@@ -40,12 +41,12 @@ export class AuthService {
 
   // register
   onRegister(data: UserInterface): Observable<UserInterface> {
-    return this.http.post<UserInterface>(this.localApi, data)
+    return this.http.post<UserInterface>(this.api, data)
   }
 
   // update/edit
   updateUser(id: any, inputdata: any): Observable<UserInterface> {
-    return this.http.put<UserInterface> (this.localApi + '/' + id, inputdata);
+    return this.http.put<UserInterface> (this.api + '/' + id, inputdata);
   }
 
   // logout

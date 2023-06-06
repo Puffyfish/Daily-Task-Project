@@ -11,32 +11,17 @@
       "isCompleted": true
     },
     {
-      "id": "0.67307702725754056",
-      "text": "This is a test",
+      "id": "0.616476154435055434",
+      "text": "Go to park",
       "isCompleted": false
     },
     {
-      "id": "0.460661603557353164",
-      "text": "This is a second test",
-      "isCompleted": false
-    },
-    {
-      "id": "0.411534622411344464",
-      "text": "this is the third test",
+      "id": "0.361417220540215574",
+      "text": "Buy groceries",
       "isCompleted": false
     }
   ],
   "users": [
-    {
-      "id": 1,
-      "email": "jj@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": 2,
-      "email": "lalala@gmail.com",
-      "password": "asdfgh"
-    },
     {
       "username": "jean",
       "name": "jean",
@@ -45,44 +30,11 @@
       "id": 3
     },
     {
-      "username": "testTwo",
-      "name": "testTwo",
-      "email": "testTwo@gmail.com",
-      "password": "twotwo",
-      "id": 4
-    },
-    {
-      "username": "nichol",
-      "name": "nichol",
-      "email": "nichol@gmail.com",
-      "password": "nichol",
-      "id": 5
-    },
-    {
-      "id": "chicken",
+      "username": "chicken",
       "name": "chicken",
       "email": "chicken@gmail.com",
-      "password": "chicken"
-    }
-  ],
-  "reminders": [
-    {
-      "id": 1,
-      "text": "Doctors Appointment",
-      "time": "8:30 AM",
-      "isCompleted": false
-    },
-    {
-      "id": 2,
-      "text": "Meeting at School",
-      "time": "2:30 PM",
-      "isCompleted": false
-    },
-    {
-      "id": 3,
-      "text": "Food Shopping",
-      "time": "4:30 PM",
-      "isCompleted": false
+      "password": "chicken",
+      "id": 5
     }
   ]
 }

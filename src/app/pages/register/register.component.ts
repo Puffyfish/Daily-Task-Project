@@ -61,10 +61,18 @@ export class RegisterComponent {
     onCreate(user: any) {
     this.authService.onRegister(user).subscribe({
       next: (res) => this._snackBar.open("Registration success", "Ok", {
-            duration: 3000,
-            panelClass: ['snackbar-success']
-          }),
-      error: (err) => this.errorMsg = err.message,
+        verticalPosition: this.verticalPosition,
+        duration: 3000,
+        panelClass: ['snackbar-success']
+        }),
+      error: (err) => {
+        this.errorMsg = err.message,
+        this._snackBar.open(this.errorMsg, "Ok", {
+          verticalPosition: this.verticalPosition,
+          duration: 3000,
+          panelClass: ['snackbar-error']
+          })
+      },
       complete: () => this.router.navigate(['/login'])
     })
 

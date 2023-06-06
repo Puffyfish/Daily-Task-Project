@@ -63,11 +63,24 @@ export class AuthComponent implements OnInit {
         this.user = user
         const { password } = this.loginForm.value;
          if (this.user.password !== password) {
-          return alert('Incorrect logins') 
-        }
+          this.isSubmit = false;
+          this.errorMsg = "Incorrect logins!";
+          this._snackbar.open(this.errorMsg, "Ok", {
+            verticalPosition: this.verticalPosition,
+            duration: 3000,
+            panelClass: ['snackbar-error']
+          });
+        } else {
+        this._snackbar.open("Login success", "Ok", {
+          verticalPosition: this.verticalPosition,
+          duration: 3000,
+          panelClass: ['snackbar-success']
+        });
+
         this._authService.storeUser(this.user)
         this.loginForm.reset();
         this._router.navigate(['todos'])
+      }
       }
     )
   }
